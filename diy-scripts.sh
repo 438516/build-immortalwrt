@@ -16,7 +16,9 @@ sed -i 's/root:::0:99999:7:::/root:$1$V4UetPzk$CYXluq4wUazHjmCDBCqXF.::0:99999:7
 rm -rf feeds/packages/lang/golang
 rm -rf feeds/packages/net/alist
 rm -rf feeds/packages/net/mosdns
+rm -rf feeds/packages/admin/netdata
 rm -rf feeds/luci/themes/luci-theme-argon
+rm -rf feeds/luci/applications/luci-app-netdata
 rm -rf feeds/luci/applications/luci-app-passwall
 rm -rf feeds/luci/applications/luci-app-openclash
 rm -rf feeds/luci/applications/luci-app-alist
@@ -34,6 +36,7 @@ function git_sparse_clone() {
 
 # 添加额外插件
 git_sparse_clone openwrt-23.05 https://github.com/coolsnowwolf/luci applications/luci-app-adguardhome
+git_sparse_clone master https://github.com/hong0980/build luci-app-netdata netdata
 
 # 科学上网插件
 git clone --depth=1 https://github.com/fw876/helloworld package/luci-app-ssr-plus
