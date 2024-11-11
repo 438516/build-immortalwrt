@@ -26,7 +26,8 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        repo: [coolsnowwolf,immortalwrt]
+        repo: [immortalwrt]
+        branch: [master, openwrt-23.05]
 
     env:
       RELEASE_TAG: armv8-${{ matrix.branch }}
